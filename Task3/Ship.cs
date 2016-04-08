@@ -33,7 +33,7 @@ namespace Task3
         }
         public override string ToString()
         {
-            return (this.Id.ToString() + "\r\n" + "Type: ScoutShip" + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.isCloaked.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
+            return ("Type: ScoutShip" + "\r\n" + this.Id.ToString() + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.isCloaked.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
         }
   
     }
@@ -60,6 +60,10 @@ namespace Task3
         {
             this.lightGunPower = lightGunPower;
         }
+        public override string ToString()
+        {
+            return ("Type: LightFighter" + "\r\n" + this.Id.ToString() + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.energoShield.ToString() + "\r\n" + this.lightGunPower.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
+        }
     }
 
     [Serializable]
@@ -75,7 +79,7 @@ namespace Task3
 
         public override string ToString()
         {
-            return (this.Id.ToString() + "\r\n" + "Type: Bomber" + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.energoShield.ToString() + "\r\n" + this.averageBomb.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
+            return ("Type: Bomber" + "\r\n" + this.Id.ToString() + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.energoShield.ToString() + "\r\n" + this.averageBomb.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
         }
     }
 

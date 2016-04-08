@@ -25,9 +25,10 @@ namespace Task3
             int shield = Int32.Parse(inputList[1].Text);
             int lightGunPower = Int32.Parse(inputList[2].Text);
 
-            return new Bomber(id, name, mass, shield, lightGunPower);
+            return new LightFighter(id, name, mass, shield, lightGunPower);
         }
 
+        
 
     }
 

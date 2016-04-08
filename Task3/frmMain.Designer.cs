@@ -39,6 +39,9 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.lightFighterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adddeleteRB = new System.Windows.Forms.RadioButton();
+            this.editRB = new System.Windows.Forms.RadioButton();
+            this.editButton = new System.Windows.Forms.Button();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             // addButton
             // 
             this.addButton.Enabled = false;
-            this.addButton.Location = new System.Drawing.Point(118, 291);
+            this.addButton.Location = new System.Drawing.Point(468, 246);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(150, 46);
             this.addButton.TabIndex = 1;
@@ -83,17 +86,19 @@
             // 
             // mainTB
             // 
+            this.mainTB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mainTB.Location = new System.Drawing.Point(434, 27);
             this.mainTB.Multiline = true;
             this.mainTB.Name = "mainTB";
-            this.mainTB.Size = new System.Drawing.Size(373, 205);
+            this.mainTB.ReadOnly = true;
+            this.mainTB.Size = new System.Drawing.Size(429, 205);
             this.mainTB.TabIndex = 2;
             // 
             // cbMain
             // 
             this.cbMain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMain.FormattingEnabled = true;
-            this.cbMain.Location = new System.Drawing.Point(699, 291);
+            this.cbMain.Location = new System.Drawing.Point(375, 27);
             this.cbMain.Name = "cbMain";
             this.cbMain.Size = new System.Drawing.Size(44, 21);
             this.cbMain.TabIndex = 3;
@@ -101,9 +106,10 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(484, 299);
+            this.deleteButton.Enabled = false;
+            this.deleteButton.Location = new System.Drawing.Point(468, 298);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(154, 38);
+            this.deleteButton.Size = new System.Drawing.Size(150, 38);
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -118,7 +124,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(867, 56);
+            this.saveButton.Location = new System.Drawing.Point(905, 71);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(121, 46);
             this.saveButton.TabIndex = 5;
@@ -128,7 +134,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(866, 137);
+            this.loadButton.Location = new System.Drawing.Point(905, 140);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(121, 44);
             this.loadButton.TabIndex = 6;
@@ -143,11 +149,48 @@
             this.lightFighterToolStripMenuItem.Text = "LightFighter";
             this.lightFighterToolStripMenuItem.Click += new System.EventHandler(this.lightFighterToolStripMenuItem_Click);
             // 
+            // adddeleteRB
+            // 
+            this.adddeleteRB.AutoSize = true;
+            this.adddeleteRB.Location = new System.Drawing.Point(373, 290);
+            this.adddeleteRB.Name = "adddeleteRB";
+            this.adddeleteRB.Size = new System.Drawing.Size(80, 17);
+            this.adddeleteRB.TabIndex = 7;
+            this.adddeleteRB.TabStop = true;
+            this.adddeleteRB.Text = "Add/Delete";
+            this.adddeleteRB.UseVisualStyleBackColor = true;
+            this.adddeleteRB.CheckedChanged += new System.EventHandler(this.adddeleteRB_CheckedChanged);
+            // 
+            // editRB
+            // 
+            this.editRB.AutoSize = true;
+            this.editRB.Location = new System.Drawing.Point(635, 290);
+            this.editRB.Name = "editRB";
+            this.editRB.Size = new System.Drawing.Size(43, 17);
+            this.editRB.TabIndex = 8;
+            this.editRB.TabStop = true;
+            this.editRB.Text = "Edit";
+            this.editRB.UseVisualStyleBackColor = true;
+            // 
+            // editButton
+            // 
+            this.editButton.Enabled = false;
+            this.editButton.Location = new System.Drawing.Point(736, 273);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(127, 50);
+            this.editButton.TabIndex = 9;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 362);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.editRB);
+            this.Controls.Add(this.adddeleteRB);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButton);
@@ -177,6 +220,9 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.ToolStripMenuItem lightFighterToolStripMenuItem;
+        private System.Windows.Forms.RadioButton adddeleteRB;
+        private System.Windows.Forms.RadioButton editRB;
+        private System.Windows.Forms.Button editButton;
 
     }
 }

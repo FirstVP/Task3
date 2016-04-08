@@ -23,7 +23,7 @@ namespace Task3
    {typeof(LightFighter), null}
 };
 
-       
+
         public frmMain()
         {
             InitializeComponent();
@@ -74,10 +74,31 @@ namespace Task3
                 RefreshList();
             }
         }
+        private int FindIndex ()
+        {
+            int i = 0;
+            while (list[i].Id != Int32.Parse(cbMain.Text)) i++;
+            return i;
+        }
 
         private void cbMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (editRB.Checked)
+            {
+                try
+                {
+                    if (currentCaster != null)
+                        currentCaster.ClearBoxes(this);
+                    currentDictionary.TryGetValue((list[FindIndex()]).GetType(), out currentCaster);
+                    currentCaster.AddBoxes(this);
+                    currentCaster.FillBoxes(this, list[FindIndex()]);
+                }
+              
+                catch
+                {
+                    MessageBox.Show("Invalid input");
+                }
+            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -105,7 +126,6 @@ namespace Task3
         {
         if (currentCaster != null)
             currentCaster.ClearBoxes(this);
-            addButton.Enabled = true;
             currentCaster = new ScoutBoxManager();
             currentCaster.AddBoxes(this);
 
@@ -115,7 +135,6 @@ namespace Task3
         {
             if (currentCaster != null)
             currentCaster.ClearBoxes(this);
-            addButton.Enabled = true;
             currentCaster = new BomberBoxManager();
             currentCaster.AddBoxes(this);
 
@@ -175,12 +194,37 @@ namespace Task3
         {
             if (currentCaster != null)
                 currentCaster.ClearBoxes(this);
-            addButton.Enabled = true;
             currentCaster = new LightFighterBoxManager();
             currentCaster.AddBoxes(this);
         }
 
-       
+        private void adddeleteRB_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshButton();
+        }
+
+       private void RefreshButton ()
+        {
+           if (adddeleteRB.Checked)
+           {
+               addButton.Enabled = true;
+               deleteButton.Enabled = true;
+               editButton.Enabled = false;
+             
+           }
+           else
+           {
+               addButton.Enabled = false;
+               deleteButton.Enabled = false;
+               editButton.Enabled = true;
+           }
+
+        }
+
+       private void editButton_Click(object sender, EventArgs e)
+       {
+
+       }
       
 
       

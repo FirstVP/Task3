@@ -27,6 +27,7 @@ namespace Task3
 
             return new Bomber(id, name, mass, shield, bomb);
         }
+      
 
 
     }
