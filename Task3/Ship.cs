@@ -23,16 +23,17 @@ namespace Task3
 
     class ScoutShip: Ship
     {
-        public bool isCloacked { get; private set; }
+        public bool isCloaked { get; private set; }
 
-        public ScoutShip(int id, string name, int mass, bool isCloacked)
+        public ScoutShip(int id, string name, int mass, bool isCloaked)
             : base(id, name, mass)
         {
-            this.isCloacked = isCloacked;
+            this.isCloaked = isCloaked;
         }
 
         public override string ToString()
         {
+            return (this.Id.ToString() + "\r\n" + this.Name + "\r\n" + this.Mass.ToString() + "\r\n" + this.isCloaked.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
         }
   
     }

@@ -19,24 +19,15 @@ namespace Task3
         public frmMain()
         {
             InitializeComponent();
+        }
+        private void RefreshList()
+        {
+            mainTB.Text = "";
+            foreach (Ship ship in list)
+                mainTB.Text += ship.ToString();
 
             
-
-           
-          //  list.Add(new Ship(1, "a", 11));
-
-           // list.Add(new ScoutShip(2, "b", 22, 222));
-
-
-           
-           
-
-          
-            //dataGridView1.DataSource = list;
-
-            
-
-
+                
         }
 
         private void ScoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,12 +56,44 @@ namespace Task3
             try
             {
                 list.Add(currentCaster.ReadBoxes(++currentId, this));
+
+                cbMain.Items.Add(currentId.ToString());
             }
         
               catch
             {
                 MessageBox.Show("Invalid input");
 
+            }
+            finally
+            {
+                RefreshList();
+            }
+        }
+
+        private void cbMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = 0;
+                while (list[i].Id != Int32.Parse(cbMain.Text)) i++;
+                list.RemoveAt(i);
+                cbMain.Items.Remove(cbMain.SelectedItem);
+            }
+
+            catch
+            {
+                MessageBox.Show("Invalid input");
+
+            }
+            finally
+            {
+                RefreshList();
             }
         }
 

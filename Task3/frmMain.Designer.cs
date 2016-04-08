@@ -32,6 +32,9 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.разведчикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addButton = new System.Windows.Forms.Button();
+            this.mainTB = new System.Windows.Forms.TextBox();
+            this.cbMain = new System.Windows.Forms.ComboBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,26 +60,57 @@
             // разведчикToolStripMenuItem
             // 
             this.разведчикToolStripMenuItem.Name = "разведчикToolStripMenuItem";
-            this.разведчикToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.разведчикToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.разведчикToolStripMenuItem.Text = "Scout";
             this.разведчикToolStripMenuItem.Click += new System.EventHandler(this.ScoutToolStripMenuItem_Click);
             // 
             // addButton
             // 
             this.addButton.Enabled = false;
-            this.addButton.Location = new System.Drawing.Point(310, 234);
+            this.addButton.Location = new System.Drawing.Point(118, 291);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(150, 61);
+            this.addButton.Size = new System.Drawing.Size(150, 46);
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // mainTB
+            // 
+            this.mainTB.Location = new System.Drawing.Point(434, 27);
+            this.mainTB.Multiline = true;
+            this.mainTB.Name = "mainTB";
+            this.mainTB.Size = new System.Drawing.Size(373, 205);
+            this.mainTB.TabIndex = 2;
+            // 
+            // cbMain
+            // 
+            this.cbMain.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMain.FormattingEnabled = true;
+            this.cbMain.Location = new System.Drawing.Point(699, 291);
+            this.cbMain.Name = "cbMain";
+            this.cbMain.Size = new System.Drawing.Size(44, 21);
+            this.cbMain.TabIndex = 3;
+            this.cbMain.SelectedIndexChanged += new System.EventHandler(this.cbMain_SelectedIndexChanged);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(484, 299);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(154, 38);
+            this.deleteButton.TabIndex = 4;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 362);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.cbMain);
+            this.Controls.Add(this.mainTB);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.mainMenu);
             this.Name = "frmMain";
@@ -94,6 +128,9 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem разведчикToolStripMenuItem;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.TextBox mainTB;
+        private System.Windows.Forms.ComboBox cbMain;
+        private System.Windows.Forms.Button deleteButton;
 
     }
 }
