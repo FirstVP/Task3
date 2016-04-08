@@ -35,6 +35,10 @@
             this.mainTB = new System.Windows.Forms.TextBox();
             this.cbMain = new System.Windows.Forms.ComboBox();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.bomberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
+            this.lightFighterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +55,9 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.разведчикToolStripMenuItem});
+            this.разведчикToolStripMenuItem,
+            this.bomberToolStripMenuItem,
+            this.lightFighterToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.addToolStripMenuItem.Text = "Add...";
@@ -103,11 +109,47 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // bomberToolStripMenuItem
+            // 
+            this.bomberToolStripMenuItem.Name = "bomberToolStripMenuItem";
+            this.bomberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bomberToolStripMenuItem.Text = "Bomber";
+            this.bomberToolStripMenuItem.Click += new System.EventHandler(this.bomberToolStripMenuItem_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(867, 56);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(121, 46);
+            this.saveButton.TabIndex = 5;
+            this.saveButton.Text = "Ssve";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // loadButton
+            // 
+            this.loadButton.Location = new System.Drawing.Point(866, 137);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(121, 44);
+            this.loadButton.TabIndex = 6;
+            this.loadButton.Text = "Load";
+            this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            // 
+            // lightFighterToolStripMenuItem
+            // 
+            this.lightFighterToolStripMenuItem.Name = "lightFighterToolStripMenuItem";
+            this.lightFighterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lightFighterToolStripMenuItem.Text = "LightFighter";
+            this.lightFighterToolStripMenuItem.Click += new System.EventHandler(this.lightFighterToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 362);
+            this.Controls.Add(this.loadButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.cbMain);
             this.Controls.Add(this.mainTB);
@@ -131,6 +173,10 @@
         private System.Windows.Forms.TextBox mainTB;
         private System.Windows.Forms.ComboBox cbMain;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.ToolStripMenuItem bomberToolStripMenuItem;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button loadButton;
+        private System.Windows.Forms.ToolStripMenuItem lightFighterToolStripMenuItem;
 
     }
 }

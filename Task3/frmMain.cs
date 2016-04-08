@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Task3
 {
@@ -15,6 +16,13 @@ namespace Task3
         BoxManager currentCaster;
         int currentId=0;
         List<Ship> list = new List<Ship>();
+
+        Dictionary<Type, BoxManager> currentDictionary = new Dictionary<Type, BoxManager> {
+   {typeof(ScoutShip), new ScoutBoxManager()},
+   {typeof(Bomber), new BomberBoxManager()},
+   {typeof(LightFighter), null}
+};
+
        
         public frmMain()
         {
@@ -23,20 +31,16 @@ namespace Task3
         private void RefreshList()
         {
             mainTB.Text = "";
+            cbMain.Items.Clear();
             foreach (Ship ship in list)
+            {
                 mainTB.Text += ship.ToString();
-
-            
-                
+                cbMain.Items.Add(ship.Id.ToString());
+            }
+   
         }
 
-        private void ScoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            addButton.Enabled = true;
-            currentCaster = new ScoutBoxManager();
-            currentCaster.AddBoxes(this);
-        
-        }
+       
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -95,6 +99,85 @@ namespace Task3
             {
                 RefreshList();
             }
+        }
+
+        private void ScoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        if (currentCaster != null)
+            currentCaster.ClearBoxes(this);
+            addButton.Enabled = true;
+            currentCaster = new ScoutBoxManager();
+            currentCaster.AddBoxes(this);
+
+        }
+
+        private void bomberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (currentCaster != null)
+            currentCaster.ClearBoxes(this);
+            addButton.Enabled = true;
+            currentCaster = new BomberBoxManager();
+            currentCaster.AddBoxes(this);
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                FileStream currentStream = new FileStream("ships.txt", FileMode.Create);
+
+                var serializer = new MySONFormatter<Ship>();
+                serializer.Serialize(currentStream, list);
+            }
+
+            catch
+            {
+                MessageBox.Show("Error writing to file");
+
+            }
+      
+
+
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                FileStream currentStream = new FileStream("ships.txt", FileMode.OpenOrCreate);
+
+
+                var serializer = new MySONFormatter<Ship>();
+                list = (List<Ship>)serializer.Deserialize(currentStream);
+            }
+
+            catch
+            {
+                MessageBox.Show("Incorrect file");
+
+            }
+
+
+          finally
+            {
+                RefreshList();
+            }
+
+         
+        }
+
+        private void lightFighterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (currentCaster != null)
+                currentCaster.ClearBoxes(this);
+            addButton.Enabled = true;
+            currentCaster = new LightFighterBoxManager();
+            currentCaster.AddBoxes(this);
         }
 
        

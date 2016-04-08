@@ -8,26 +8,27 @@ using System.Drawing;
 
 namespace Task3
 {
-    class ScoutBoxManager : BoxManager
+    class BomberBoxManager : BoxManager
     {
-        
-        public ScoutBoxManager() 
+
+        public BomberBoxManager()
         {
-            this.number = 3;
-            this.names = new string[] { "ArmorType", "Mass", "Cloak" };
+            this.number = 4;
+            this.names = new string[] { "ArmorType", "Mass", "EnergoShield", "Single bomb power" };
             this.inputList = new List<TextBox>();
             this.captionList = new List<Label>();
         }
-        public override Ship ReadBoxes (int id, frmMain frmMain)
+        public override Ship ReadBoxes(int id, frmMain frmMain)
         {
             string name = inputList[0].Text;
             int mass = Int32.Parse(inputList[1].Text);
-            bool isCloaked = Boolean.Parse(inputList[2].Text);
+            int shield = Int32.Parse(inputList[1].Text);
+            int bomb = Int32.Parse(inputList[2].Text);
 
-            return new ScoutShip(id, name, mass, isCloaked);
+            return new Bomber(id, name, mass, shield, bomb);
         }
 
-      
+
     }
 
 }

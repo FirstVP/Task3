@@ -7,20 +7,21 @@ using System.Threading.Tasks;
 namespace Task3
 {
     [Serializable]
-     class Ship
+    abstract class Ship
     {
         public int Id { get; private set; }
-        public string Name { get; private set; }
+        public string ArmorType { get; private set; }
         public int Mass { get; private set; }
  
         public Ship(int id, string name, int mass)
         {
             this.Id = id;
-            this.Name = name;
+            this.ArmorType = name;
             this.Mass = mass;
         }
     }
 
+    [Serializable]
     class ScoutShip: Ship
     {
         public bool isCloaked { get; private set; }
@@ -30,14 +31,53 @@ namespace Task3
         {
             this.isCloaked = isCloaked;
         }
-
         public override string ToString()
         {
-            return (this.Id.ToString() + "\r\n" + this.Name + "\r\n" + this.Mass.ToString() + "\r\n" + this.isCloaked.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
+            return (this.Id.ToString() + "\r\n" + "Type: ScoutShip" + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.isCloaked.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
         }
   
     }
 
+    [Serializable]
+    abstract class Fighter : Ship
+    {
+        public int energoShield { get; private set; }
+
+        public Fighter(int id, string name, int mass, int energoShield)
+            : base(id, name, mass)
+        {
+            this.energoShield = energoShield;
+        }
+    }
+
+    [Serializable]
+    class LightFighter : Fighter
+    {
+        public int lightGunPower { get; private set; }
+
+        public LightFighter(int id, string name, int mass, int energoShield, int lightGunPower)
+            : base(id, name, mass, energoShield)
+        {
+            this.lightGunPower = lightGunPower;
+        }
+    }
+
+    [Serializable]
+   class Bomber : Fighter
+    {
+        public int averageBomb { get; private set; }
+
+        public Bomber(int id, string name, int mass, int energoShield, int averageBomb)
+            : base(id, name, mass, energoShield)
+        {
+            this.averageBomb = averageBomb;
+        }
+
+        public override string ToString()
+        {
+            return (this.Id.ToString() + "\r\n" + "Type: Bomber" + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.energoShield.ToString() + "\r\n" + this.averageBomb.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
+        }
+    }
 
 
   /*  [Serializable]
