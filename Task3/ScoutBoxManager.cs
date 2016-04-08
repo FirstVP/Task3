@@ -11,7 +11,7 @@ namespace Task3
     class ScoutBoxManager : BoxManager
     {
         
-        public ScoutBoxManager()
+        public ScoutBoxManager() 
         {
             this.number = 3;
             this.names = new string[] { "Name", "Mass", "Cloak" };
