@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Task3.frmMain" Collapsed="true">
-    <Position X="4.25" Y="1" Width="1.5" />
+    <Position X="5.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABEAAgAAAGAAAEAAAACAAIAKAgCIcAAAgAAoUAAAQAE=</HashCode>
+      <HashCode>AJEEEgoAAmAABEgAgACAIICqAgCIcAABgAMoUAAAQAM=</HashCode>
       <FileName>frmMain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.MySONFormatter&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6" Y="1" Width="1.5" />
+    <Position X="7.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAwAAxgQAAAAAAAAAAACACBQAAAAAAAACAAAAAA=</HashCode>
       <FileName>MySONFormatter.cs</FileName>
@@ -16,70 +16,127 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Task3.Program" Collapsed="true">
-    <Position X="8.5" Y="1" Width="1.5" />
+    <Position X="9.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.Ship" Collapsed="true">
-    <Position X="5.5" Y="5.5" Width="1.5" />
+    <Position X="7.5" Y="12.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAACAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.Properties.Resources" Collapsed="true">
-    <Position X="4.5" Y="2.25" Width="1.5" />
+    <Position X="5.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.Properties.Settings" Collapsed="true">
-    <Position X="6.75" Y="1.75" Width="1.5" />
+    <Position X="8" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.BoxManager" Collapsed="true">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+    <Position X="2" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAQQAAABAAAAAAQAAAAAQAAAAAAAAAAIA=</HashCode>
+      <HashCode>AAAEAAAQAAAAQQAAABAAAAAAQAAAAAQAAAAAAAAAAIA=</HashCode>
       <FileName>BoxManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.LightFighterBoxManager" Collapsed="true">
-    <Position X="0.75" Y="4.5" Width="1.5" />
+    <Position X="2" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>LightFighterBoxManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.ScoutShip" Collapsed="true">
-    <Position X="11" Y="5.75" Width="1.5" />
+    <Position X="12" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.Fighter" Collapsed="true">
-    <Position X="10.75" Y="2" Width="1.5" />
+    <Position X="7.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.LightFighter" Collapsed="true">
-    <Position X="9" Y="3.5" Width="1.5" />
+    <Position X="5.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task3.Bomber" Collapsed="true">
-    <Position X="12" Y="3.5" Width="1.5" />
+    <Position X="10.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.BomberBoxManager" Collapsed="true">
+    <Position X="16.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>BomberBoxManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.CloseContactFighterBoxManager" Collapsed="true">
+    <Position X="1.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>CloseContactFighterBoxManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.HeavyBomberBoxManager" Collapsed="true">
+    <Position X="19" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>HeavyBomberBoxManager.cs</FileName>
+      <NewMemberFileName>BomberBoxManager.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.ScoutBoxManager" Collapsed="true">
+    <Position X="22.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>ScoutBoxManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.HeavyBomber" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.CloseContactFighter" Collapsed="true">
+    <Position X="8.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.HeavyFighterBoxManager" Collapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>HeavyFighterBoxManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task3.HeavyFighter" Collapsed="true">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>

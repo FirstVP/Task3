@@ -22,8 +22,8 @@ namespace Task3
         {
             string name = inputList[0].Text;
             int mass = Int32.Parse(inputList[1].Text);
-            int shield = Int32.Parse(inputList[1].Text);
-            int bomb = Int32.Parse(inputList[2].Text);
+            int shield = Int32.Parse(inputList[2].Text);
+            int bomb = Int32.Parse(inputList[3].Text);
 
             return new Bomber(id, name, mass, shield, bomb);
         }

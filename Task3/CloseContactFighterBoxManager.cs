@@ -8,13 +8,13 @@ using System.Drawing;
 
 namespace Task3
 {
-    class LightFighterBoxManager : BoxManager
+    class CloseContactFighterBoxManager : BoxManager
     {
 
-        public LightFighterBoxManager()
+        public CloseContactFighterBoxManager()
         {
             this.number = 4;
-            this.names = new string[] { "ArmorType", "Mass", "EnergoShield", "Light gun power" };
+            this.names = new string[] { "ArmorType", "Mass", "EnergoShield", "Cutter power" };
             this.inputList = new List<TextBox>();
             this.captionList = new List<Label>();
         }
@@ -23,9 +23,9 @@ namespace Task3
             string name = inputList[0].Text;
             int mass = Int32.Parse(inputList[1].Text);
             int shield = Int32.Parse(inputList[2].Text);
-            int lightGunPower = Int32.Parse(inputList[3].Text);
+            int cutterPower = Int32.Parse(inputList[3].Text);
 
-            return new LightFighter(id, name, mass, shield, lightGunPower);
+            return new CloseContactFighter(id, name, mass, shield, cutterPower);
         }
 
         

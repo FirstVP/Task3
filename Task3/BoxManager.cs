@@ -18,7 +18,6 @@ namespace Task3
         public void AddBoxes(frmMain frmMain)
     {
         
-
         for (int i = 0; i < number; i++)
             {
                 int y = 10 + (i + 1) * 50;
@@ -33,9 +32,9 @@ namespace Task3
 
         public abstract Ship ReadBoxes(int id, frmMain frmMain);
 
-        public int FillBoxes(frmMain frmMain, Ship ship)
+        public void FillBoxes(frmMain frmMain, Ship ship)
         {
-            int result = 1;
+            
             string[] del = { "\r\n" };
        
             string[] currentProperties = ship.ToString().Split(del, StringSplitOptions.RemoveEmptyEntries);
@@ -45,15 +44,9 @@ namespace Task3
                 inputList[i-2].Text = currentProperties[i];
             }
 
-            result = Int32.Parse(currentProperties[1]);
+           
 
-            return result;
-            /*inputList[0].Text = ship.ArmorType;
-            inputList[1].Text = ship.Mass.ToString();
-            inputList[2].Text = ship.isCloaked.ToString();
-            bool isCloaked = Boolean.Parse(inputList[2].Text);
-
-            return new ScoutShip(id, name, mass, isCloaked);*/
+           
         
         }
 

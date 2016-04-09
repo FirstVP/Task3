@@ -31,17 +31,20 @@
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.разведчикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bomberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightFighterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addButton = new System.Windows.Forms.Button();
             this.mainTB = new System.Windows.Forms.TextBox();
             this.cbMain = new System.Windows.Forms.ComboBox();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.bomberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
-            this.lightFighterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adddeleteRB = new System.Windows.Forms.RadioButton();
             this.editRB = new System.Windows.Forms.RadioButton();
             this.editButton = new System.Windows.Forms.Button();
+            this.heavyBomberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeContactFighterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.heavyFighterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +63,10 @@
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.разведчикToolStripMenuItem,
             this.bomberToolStripMenuItem,
-            this.lightFighterToolStripMenuItem});
+            this.lightFighterToolStripMenuItem,
+            this.heavyBomberToolStripMenuItem,
+            this.closeContactFighterToolStripMenuItem,
+            this.heavyFighterToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.addToolStripMenuItem.Text = "Add...";
@@ -72,6 +78,20 @@
             this.разведчикToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.разведчикToolStripMenuItem.Text = "Scout";
             this.разведчикToolStripMenuItem.Click += new System.EventHandler(this.ScoutToolStripMenuItem_Click);
+            // 
+            // bomberToolStripMenuItem
+            // 
+            this.bomberToolStripMenuItem.Name = "bomberToolStripMenuItem";
+            this.bomberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bomberToolStripMenuItem.Text = "Bomber";
+            this.bomberToolStripMenuItem.Click += new System.EventHandler(this.bomberToolStripMenuItem_Click);
+            // 
+            // lightFighterToolStripMenuItem
+            // 
+            this.lightFighterToolStripMenuItem.Name = "lightFighterToolStripMenuItem";
+            this.lightFighterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lightFighterToolStripMenuItem.Text = "LightFighter";
+            this.lightFighterToolStripMenuItem.Click += new System.EventHandler(this.lightFighterToolStripMenuItem_Click);
             // 
             // addButton
             // 
@@ -115,13 +135,6 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // bomberToolStripMenuItem
-            // 
-            this.bomberToolStripMenuItem.Name = "bomberToolStripMenuItem";
-            this.bomberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bomberToolStripMenuItem.Text = "Bomber";
-            this.bomberToolStripMenuItem.Click += new System.EventHandler(this.bomberToolStripMenuItem_Click);
-            // 
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(905, 71);
@@ -141,13 +154,6 @@
             this.loadButton.Text = "Load";
             this.loadButton.UseVisualStyleBackColor = true;
             this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
-            // 
-            // lightFighterToolStripMenuItem
-            // 
-            this.lightFighterToolStripMenuItem.Name = "lightFighterToolStripMenuItem";
-            this.lightFighterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.lightFighterToolStripMenuItem.Text = "LightFighter";
-            this.lightFighterToolStripMenuItem.Click += new System.EventHandler(this.lightFighterToolStripMenuItem_Click);
             // 
             // adddeleteRB
             // 
@@ -171,6 +177,7 @@
             this.editRB.TabStop = true;
             this.editRB.Text = "Edit";
             this.editRB.UseVisualStyleBackColor = true;
+            this.editRB.CheckedChanged += new System.EventHandler(this.editRB_CheckedChanged);
             // 
             // editButton
             // 
@@ -182,6 +189,27 @@
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // heavyBomberToolStripMenuItem
+            // 
+            this.heavyBomberToolStripMenuItem.Name = "heavyBomberToolStripMenuItem";
+            this.heavyBomberToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.heavyBomberToolStripMenuItem.Text = "HeavyBomber";
+            this.heavyBomberToolStripMenuItem.Click += new System.EventHandler(this.heavyBomberToolStripMenuItem_Click);
+            // 
+            // closeContactFighterToolStripMenuItem
+            // 
+            this.closeContactFighterToolStripMenuItem.Name = "closeContactFighterToolStripMenuItem";
+            this.closeContactFighterToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.closeContactFighterToolStripMenuItem.Text = "CloseContactFighter";
+            this.closeContactFighterToolStripMenuItem.Click += new System.EventHandler(this.closeContactFighterToolStripMenuItem_Click);
+            // 
+            // heavyFighterToolStripMenuItem
+            // 
+            this.heavyFighterToolStripMenuItem.Name = "heavyFighterToolStripMenuItem";
+            this.heavyFighterToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.heavyFighterToolStripMenuItem.Text = "HeavyFighter";
+            this.heavyFighterToolStripMenuItem.Click += new System.EventHandler(this.heavyFighterToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -223,6 +251,9 @@
         private System.Windows.Forms.RadioButton adddeleteRB;
         private System.Windows.Forms.RadioButton editRB;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.ToolStripMenuItem heavyBomberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeContactFighterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem heavyFighterToolStripMenuItem;
 
     }
 }

@@ -14,13 +14,17 @@ namespace Task3
     public partial class frmMain : Form
     {
         BoxManager currentCaster;
-        int currentId=0;
+        int currentId = 0;
+ 
         List<Ship> list = new List<Ship>();
 
         Dictionary<Type, BoxManager> currentDictionary = new Dictionary<Type, BoxManager> {
    {typeof(ScoutShip), new ScoutBoxManager()},
    {typeof(Bomber), new BomberBoxManager()},
-   {typeof(LightFighter), null}
+   {typeof(LightFighter), new LightFighterBoxManager()},
+   {typeof(HeavyFighter), new HeavyFighterBoxManager()},
+   {typeof(HeavyBomber), new HeavyBomberBoxManager()},
+   {typeof(CloseContactFighter), new CloseContactFighterBoxManager()},
 };
 
 
@@ -91,7 +95,8 @@ namespace Task3
                         currentCaster.ClearBoxes(this);
                     currentDictionary.TryGetValue((list[FindIndex()]).GetType(), out currentCaster);
                     currentCaster.AddBoxes(this);
-                    currentCaster.FillBoxes(this, list[FindIndex()]);
+                   currentCaster.FillBoxes(this, list[FindIndex()]);
+ 
                 }
               
                 catch
@@ -122,23 +127,7 @@ namespace Task3
             }
         }
 
-        private void ScoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        if (currentCaster != null)
-            currentCaster.ClearBoxes(this);
-            currentCaster = new ScoutBoxManager();
-            currentCaster.AddBoxes(this);
-
-        }
-
-        private void bomberToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (currentCaster != null)
-            currentCaster.ClearBoxes(this);
-            currentCaster = new BomberBoxManager();
-            currentCaster.AddBoxes(this);
-
-        }
+       
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -190,16 +179,30 @@ namespace Task3
          
         }
 
-        private void lightFighterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (currentCaster != null)
-                currentCaster.ClearBoxes(this);
-            currentCaster = new LightFighterBoxManager();
-            currentCaster.AddBoxes(this);
-        }
+    
 
         private void adddeleteRB_CheckedChanged(object sender, EventArgs e)
         {
+            if (currentCaster != null)
+            {
+                currentCaster.ClearBoxes(this);
+                currentCaster = null;
+
+            }
+                
+             
+            RefreshButton();
+        }
+
+        private void editRB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (currentCaster != null)
+            {
+                currentCaster.ClearBoxes(this);
+                currentCaster = null;
+
+            }
+               
             RefreshButton();
         }
 
@@ -223,8 +226,80 @@ namespace Task3
 
        private void editButton_Click(object sender, EventArgs e)
        {
+           try 
+           {
+               list[FindIndex()] = currentCaster.ReadBoxes(Int32.Parse(cbMain.Text), this);
+           }
+           catch
+           {
+               MessageBox.Show("Invalid input");
+
+           }
+
+           finally
+           {
+               RefreshList();
+           }
+       
+       }
+
+       private void ScoutToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+           if (currentCaster != null)
+               currentCaster.ClearBoxes(this);
+           currentCaster = new ScoutBoxManager();
+           currentCaster.AddBoxes(this);
 
        }
+
+       private void bomberToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+           if (currentCaster != null)
+               currentCaster.ClearBoxes(this);
+           currentCaster = new BomberBoxManager();
+           currentCaster.AddBoxes(this);
+
+       }
+
+       private void heavyBomberToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+           if (currentCaster != null)
+               currentCaster.ClearBoxes(this);
+           currentCaster = new HeavyBomberBoxManager();
+           currentCaster.AddBoxes(this);
+
+       }
+
+       private void lightFighterToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+           if (currentCaster != null)
+               currentCaster.ClearBoxes(this);
+
+           currentCaster = new LightFighterBoxManager();
+           currentCaster.AddBoxes(this);
+       }
+
+       private void closeContactFighterToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+           if (currentCaster != null)
+               currentCaster.ClearBoxes(this);
+
+           currentCaster = new CloseContactFighterBoxManager();
+           currentCaster.AddBoxes(this);
+
+       }
+
+       private void heavyFighterToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+           if (currentCaster != null)
+               currentCaster.ClearBoxes(this);
+
+           currentCaster = new HeavyFighterBoxManager();
+           currentCaster.AddBoxes(this);
+
+       }
+
+ 
       
 
       

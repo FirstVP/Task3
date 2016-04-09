@@ -8,13 +8,13 @@ using System.Drawing;
 
 namespace Task3
 {
-    class LightFighterBoxManager : BoxManager
+    class HeavyBomberBoxManager : BoxManager
     {
 
-        public LightFighterBoxManager()
+        public HeavyBomberBoxManager()
         {
-            this.number = 4;
-            this.names = new string[] { "ArmorType", "Mass", "EnergoShield", "Light gun power" };
+            this.number = 5;
+            this.names = new string[] { "ArmorType", "Mass", "EnergoShield", "Single bomb power", "Single big bomb" };
             this.inputList = new List<TextBox>();
             this.captionList = new List<Label>();
         }
@@ -23,12 +23,13 @@ namespace Task3
             string name = inputList[0].Text;
             int mass = Int32.Parse(inputList[1].Text);
             int shield = Int32.Parse(inputList[2].Text);
-            int lightGunPower = Int32.Parse(inputList[3].Text);
+            int bomb = Int32.Parse(inputList[3].Text);
+            int bigbomb = Int32.Parse(inputList[4].Text);
 
-            return new LightFighter(id, name, mass, shield, lightGunPower);
+            return new HeavyBomber(id, name, mass, shield, bomb, bigbomb);
         }
+      
 
-        
 
     }
 

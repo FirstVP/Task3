@@ -83,38 +83,54 @@ namespace Task3
         }
     }
 
-
-  /*  [Serializable]
-   abstract class LightShip : Ship
+     [Serializable]
+    class HeavyBomber : Bomber
     {
-        public int LightWeaponPower { get; private set; }
-        public bool IsCloacked { get; private set; }
-        public LightShip(ulong id, string name, uint mass, uint armour, int lightWeaponPower)
-            : base(id, name, mass)
+        public int bigBomb { get; private set; }
+
+        public HeavyBomber(int id, string name, int mass, int energoShield, int averageBomb, int bigBomb)
+            : base(id, name, mass, energoShield, averageBomb)
         {
-            this.LightWeaponPower = lightWeaponPower;
+            this.bigBomb = bigBomb;
+        }
+
+        public override string ToString()
+        {
+            return ("Type: HeavyBomber" + "\r\n" + this.Id.ToString() + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.energoShield.ToString() + "\r\n" + this.averageBomb.ToString() + "\r\n" + this.bigBomb.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
         }
     }
 
-     [Serializable]
-    class HelperTwo : LightShip
+    [Serializable]
+    class CloseContactFighter : Fighter
     {
-        public int bid { get; set; }
-        public HelperTwo(int id, string name, int mnd)
-            : base(id, name)
+        public int cutterPower { get; private set; }
+
+        public CloseContactFighter(int id, string name, int mass, int energoShield, int cutterPower)
+            : base(id, name, mass, energoShield)
         {
-            this.bid = bid;
+            this.cutterPower = cutterPower;
+        }
+        public override string ToString()
+        {
+            return ("Type: CloseContactFighter" + "\r\n" + this.Id.ToString() + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.energoShield.ToString() + "\r\n" + this.cutterPower.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
         }
     }
 
-     [Serializable]
-    class Master : HelperTwo
+    [Serializable]
+    class HeavyFighter : LightFighter
     {
-        public bool cid { get; set; }
-        public Master(int id, string name, int bid, bool cid)
-            : base(id, name, bid)
+        public int heavyGunPower { get; private set; }
+
+        public HeavyFighter(int id, string name, int mass, int energoShield, int lightGunPower, int heavyGunPower)
+            : base(id, name, mass, energoShield, lightGunPower)
         {
-            this.cid = cid;
+            this.heavyGunPower = heavyGunPower;
         }
-    }*/
+
+        public override string ToString()
+        {
+            return ("Type: HeavyFighter" + "\r\n" + this.Id.ToString() + "\r\n" + this.ArmorType + "\r\n" + this.Mass.ToString() + "\r\n" + this.energoShield.ToString() + "\r\n" + this.lightGunPower.ToString() + "\r\n" + this.heavyGunPower.ToString() + "\r\n" + "-|-|-|-|-|-|-|-|" + "\r\n");
+        }
+    }
+
 }
